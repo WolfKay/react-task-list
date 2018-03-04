@@ -1,0 +1,18 @@
+html {
+  box-sizing: border-box;
+
+  background: rgb(221, 221, 221);
+
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
