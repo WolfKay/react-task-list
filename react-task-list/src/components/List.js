@@ -9,13 +9,19 @@ import "./List.css"
 class List extends Component {
     state = {
         showTask: [0, 1]
-    }
+    } 
 
-        // I am testing this part, essentially I would use a method like a splice
-    handleClick = taskId => {
-        this.setState({
-            showTask: taskId
-          });
+    deleteTask = taskId => {
+        const stateArray = this.state.showTask
+
+        const updatedTaskId = stateArray.indexOf(taskId);
+
+        stateArray.splice(updatedTaskId, 1);
+        this.setState ({
+            showTask : stateArray
+        })
+        console.log(updatedTaskId);
+        console.log(stateArray);
     }
 
     render() {
@@ -30,8 +36,8 @@ class List extends Component {
                         x={d.x}
                         taskId={index}
                         // includes is failing, if a i change it to a conditional it works
-                        isListed={this.state.showTask.includes(this.props.taskId)}
-                        removeTask={this.handleClick}
+                        isListed={this.state.showTask.includes(index)}
+                        deleteTask={this.deleteTask}
                     />
                 ))}
             </div>

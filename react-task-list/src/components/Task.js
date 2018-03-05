@@ -7,13 +7,12 @@ import './Task.css';
 class Task extends Component {
 
     onClick = () => {
-        this.props.removeTask(this.props.taskId);
+        this.props.deleteTask(this.props.taskId);
     }
 
     render() {
         return (
-        <div className ={`task ${this.props.className}
-        ${!this.props.isListed ? "hidden" : ""}`}
+        <div className ={`task ${this.props.isListed ? "" : "hidden"}`}
         onClick={this.onClick}>
          <p>{this.props.x}</p>
          <p>{this.props.date}</p>
